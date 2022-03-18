@@ -18,7 +18,6 @@ describe("Test the root path", () => {
       password: 'Habibie123',
       poin: 90
     }).then(response => {
-      console.log(response);
       expect(response.statusCode).toBe(200);
     });
   });
