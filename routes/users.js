@@ -20,7 +20,7 @@ router.get('/', function(req, res, next) {
 router.post('/', function(req, res, next) {
   const { username, password, poin } = req.body;
   let user = new usersModel({
-    username,
+    username.toLowerCase(),
     password,
     poin
   });
