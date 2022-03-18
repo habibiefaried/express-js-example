@@ -27,16 +27,13 @@ describe("Test the root path", () => {
     return request(app)
       .get("/users")
       .then(response => {
-        console.log(response.body);
+        expect(response.body.message.length).toBe(1);
+        expect(response.body.message[0].username).toBe("Habibie");
         expect(response.statusCode).toBe(200);
       });
   });
 
   afterAll(() => {
-    console.log("Cleaning up and closing...");
-    Users.deleteMany({
-      username: 'Habibie'
-    });
     mongoose.connection.close();
   });
 });
